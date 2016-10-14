@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="DIApp">
+<html lang="en" ng-app="MsgApp">
 <head>
     <meta charset="UTF-8">
     <!-- Favicon -->
     <link href="favicon.ico" rel="shortcut icon">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Dependency Injection in Javascript (and AngularJS)</title>
+    <title>Expression and Interpolation</title>
 </head>
 <body>
-    <h1>Dependency Injection in Javascript (and AngularJS)</h1>
-    <div ng-controller="DIController">
-        <input type="text" ng-model="name" ng-blur="upper();">
+    <h1>Expression and Interpolation</h1>
+    <div ng-controller="MsgController">
+        Message is: <br>
+        {{sayMessage()}}
     </div>
 </body>
 </html>
