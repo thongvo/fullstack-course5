@@ -12,7 +12,7 @@
 
     function LunchCheckController($scope) {
         $scope.list;
-        $scope.numsOfFood;
+        var numsOfFood;
         $scope.message;
 
         function parseStringToNum(parseString) {
@@ -24,8 +24,8 @@
                 $scope.message = "Please enter data first";
             }
             else {
-                $scope.numsOfFood = parseStringToNum($scope.list);
-                if ($scope.numsOfFood > 3) {
+                numsOfFood = parseStringToNum($scope.list);
+                if (numsOfFood > 3) {
                     $scope.message = "Too much!";
                 } else {
                     $scope.message = "Enjoy!";
