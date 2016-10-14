@@ -11,10 +11,16 @@
 
     function MsgController($scope) {
         $scope.name = "Thong";
+        $scope.stateOfBeing = "hungry";
 
         $scope.sayMessage = function () {
             return "Hello from Thong";
         };
+
+        $scope.feedThong = function () {
+            $scope.stateOfBeing = "fed";
+        };
+
     };
 
 
