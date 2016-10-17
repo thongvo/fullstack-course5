@@ -6,13 +6,15 @@
     <link href="favicon.ico" rel="shortcut icon">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title>Expression and Interpolation</title>
+    <title>Custom Filter</title>
 </head>
 <body>
-    <h1>Expression and Interpolation</h1>
+    <h1>Cunstom Filter</h1>
     <div ng-controller="MsgController">
-        Message is: <br>
-        {{sayMessage()}}
+        Original message is: {{ sayMessage() }}  <br>
+        Love message is: {{ sayLovesMessage() }}  <br>
+        Truth message is: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' }}  <br>
+        BIG TRUTH: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' | uppercase}}  <br>
         <div>
             <button ng-click="feedThong()">Feed Thong</button>
             <br>
