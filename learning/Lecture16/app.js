@@ -4,39 +4,29 @@
 (function() {
     'use strict';
 
-    angular.module('CounterApp', [])
-        .controller('CounterController', CounterController);
+    angular.module('BindingApp', [])
+        .controller('BindingController', BindingController);
 
-    CounterController.$inject = ['$scope'];
-    function CounterController($scope) {
-        $scope.onceCounter = 0;
-        $scope.counter = 0;
-        $scope.name = "Thong";
+    BindingController.$inject = ['$scope'];
+
+    function BindingController($scope) {
+        $scope.firstName = "Thong";
+        //$scope.fullName = "";
 
         $scope.showNumberOfWatchers = function() {
             console.log("# of watchers: " + $scope.$$watchersCount);
         };
 
-        $scope.countOnce = function () {
-            $scope.onceCounter = 1;
+        $scope.setFullName = function () {
+            $scope.fullName = $scope.firstName + " " + "Vo Hoang";
         };
 
-        $scope.upCounter = function () {
-            $scope.counter++;
+        $scope.logFirstName = function () {
+            console.log("First name is: " + $scope.firstName);
         };
 
-        //$scope.$watch('onceCounter', function (newValue, oldValue) {
-        //    console.log("Oncecounter old value: " + oldValue);
-        //    console.log("Oncecounter new value: " + newValue);
-        //});
-        //
-        //$scope.$watch('counter', function (newValue, oldValue) {
-        //    console.log("Counter old value: " + oldValue);
-        //    console.log("Counter new value: " + newValue);
-        //});
-
-        $scope.$watch(function () {
-            console.log("Digest loop fired!")
-        })
+        $scope.logFullName = function () {
+            console.log("Full name is: " + $scope.fullName);
+        };
     };
 }) ();
