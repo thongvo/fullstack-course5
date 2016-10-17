@@ -7,14 +7,17 @@
     angular.module('MsgApp', [])
         .controller('MsgController', MsgController);
 
-    MsgController.$inject = ['$scope'];
+    MsgController.$inject = ['$scope', '$filter'];
 
-    function MsgController($scope) {
+    function MsgController($scope, $filter) {
         $scope.name = "Thong";
         $scope.stateOfBeing = "hungry";
+        $scope.cookieCost = .45;
 
         $scope.sayMessage = function () {
-            return "Hello from Thong";
+            var msg = "Hello from Thong";
+            var output = $filter('uppercase')(msg);
+            return output;
         };
 
         $scope.feedThong = function () {
