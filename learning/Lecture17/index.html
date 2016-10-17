@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>ng-repeat</title>
+</head>
+<body>
+    <h1>ng-repeat</h1>
+    <div ng-controller="ShoppingListController">
+        <!-- Shopping list #1: -->
+        <h3>Shopping List: </h3>
+        <ul>
+            <li ng-repeat="item in shoppingList1">{{ item }}</li>
+        </ul>
+    </div>
+</body>
+</html>
