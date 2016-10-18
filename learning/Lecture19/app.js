@@ -4,18 +4,21 @@
 (function () {
     'use strict';
 
-    var shoppingList = [
-        "Milk", "Donuts", "Cookies", "Chocolate", "Peanut Butter", "Pepto Bismol", "Pepto Bismol (Chocolate flavor)",
-        "Pepto Bismol (Cookie flavor)"
-    ];
+    angular.module('ControllerAsApp', [])
+        .controller('ParentController2', ParentController2)
+        .controller('ChildController2', ChildController2);
 
-    angular.module('ShoppingListApp', [])
-        .controller('ShoppingListController', ShoppingListController);
+    //ParentController2.$inject = ['$scope'];
+    ChildController2.$inject = ['$scope'];
 
-    ShoppingListController.$inject = ['$scope'];
+    function ParentController2($scope) {
+        var parent = this;
+        parent.value = 1
+    };
 
-    function ShoppingListController($scope) {
-        $scope.shoppingList = shoppingList;
-
+    function ChildController2($scope) {
+        var child = this;
+        child.value = 5;
+        console.log("ChildController2 scope: ", $scope);
     };
 })();
