@@ -27,6 +27,10 @@
         var showList = this;
 
         showList.items = ShoppingListService.getItems();
+
+        showList.removeItem = function (itemIndex) {
+            ShoppingListService.removeItem(itemIndex);
+        }
     };
 
     function ShoppingListService() {
@@ -41,6 +45,10 @@
                 quantity: quantity
             };
             items.push(item);
+        };
+
+        service.removeItem = function (itemIndex) {
+            items.splice(itemIndex, 1);
         };
 
         service.getItems = function () {
